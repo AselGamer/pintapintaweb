@@ -1,23 +1,121 @@
 /* src/App.css */
-body {
+* {
   margin: 0;
-  font-family: 'Arial', sans-serif;
-  background-color: #f9f9f9;  /* Fondo general de la aplicación */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  min-height: 100%;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.app-container {
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #F9FAFB;
+  color: #333;
+}
+
+.App {
+  width: 100%;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  padding: 20px;
+  flex-direction: column;
+}
+
+.container {
+  width: 80%;
+  max-width: 1200px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin: 20px;
 }
 
 h2, h3 {
   color: #333;
+  margin-bottom: 20px;
+}
+
+h4 {
+  color: #4E73DF;
+  margin-top: 15px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #4E73DF;
+  color: #fff;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 10px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #3750B5;
+}
+
+button:focus {
+  outline: none;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table th, table td {
+  padding: 12px;
+  text-align: left;
+  font-size: 1rem;
+}
+
+table th {
+  background-color: #4E73DF;
+  color: white;
+}
+
+table tr:nth-child(even) {
+  background-color: #F4F7FB;
+}
+
+table tr:hover {
+  background-color: #E0E0E0;
+}
+
+.dashboard-container, .courses-container {
+  text-align: center;
+  padding: 30px;
+}
+
+.courses-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.course-box {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.course-box:hover {
+  transform: scale(1.05);
+}
+
+.course-box h4 {
+  color: #4E73DF;
+}
+
+.course-box p {
+  color: #6C757D;
 }

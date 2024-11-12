@@ -1,0 +1,48 @@
+/* src/components/CentroEstudios.css */
+.centro-container {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  margin: 20px auto;
+}
+
+h2, h3 {
+  color: #333;
+}
+
+h4 {
+  color: #4e73df;
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th, td {
+  padding: 14px;
+  text-align: left;
+  font-size: 18px;
+}
+
+th {
+  background-color: #4e73df;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f0f7ff;
+}
+
+tr:hover {
+  background-color: #e6e6e6;
+}

@@ -1,0 +1,36 @@
+/* src/components/Dashboard.css */
+.dashboard-container {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.asignatura-section {
+  margin-bottom: 30px;
+}
+
+button {
+  padding: 12px 25px;
+  background-color: #4e73df;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+button:hover {
+  background-color: #3b59d0;
+}
+
+.btn-entregas {
+  background-color: #28a745; /* Verde para entregas */
+}
+
+.btn-ausencias {
+  background-color: #dc3545; /* Rojo para ausencias */
+}
