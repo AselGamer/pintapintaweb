@@ -1,11 +1,10 @@
-// src/data/Faltas.js
-
-export const faltas = [
-  { alumno: 'Juan Pérez', fecha: '2024-10-01' },
-  { alumno: 'Ana López', fecha: '2024-10-03' },
-  { alumno: 'Carlos García', fecha: '2024-10-02' },
+// Datos de ejemplo para las faltas de los estudiantes
+const faltasData = [
+  { nombre: "Juan Pérez", faltas: 3 },
+  { nombre: "Ana Gómez", faltas: 2 },
+  { nombre: "Carlos López", faltas: 1 },
+  { nombre: "Laura Fernández", faltas: 4 },
+  { nombre: "Pedro Sánchez", faltas: 0 },
 ];
 
-export const obtenerFaltas = () => {
-  return faltas;
-};
+export default faltasData;

@@ -1,0 +1,31 @@
+/* src/components/SeleccionCurso.css */
+.seleccion-curso-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f4f7fc;
+  }
+  
+  .cursos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .curso-btn {
+    padding: 12px 25px;
+    background-color: #4e73df;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 10px;
+    font-size: 18px;
+  }
+  
+  .curso-btn:hover {
+    background-color: #3b59d0;
+  }
+  

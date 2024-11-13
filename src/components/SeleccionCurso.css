@@ -1,31 +1,42 @@
-/* src/components/SeleccionCurso.css */
 .seleccion-curso-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    background-color: #f4f7fc;
-  }
-  
-  .cursos {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .curso-btn {
-    padding: 12px 25px;
-    background-color: #4e73df;
-    color: white;
+    padding: 2rem;
+    background-color: #f5f5f5;
+    min-height: 100vh;
+}
+
+h2 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    color: #333;
+}
+
+.cursos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    width: 100%;
+    max-width: 500px;
+}
+
+.curso-button {
+    padding: 1rem;
+    font-size: 1.2rem;
+    background-color: #007bff;
+    color: #fff;
     border: none;
-    border-radius: 8px;
+    border-radius: 5px;
     cursor: pointer;
-    margin: 10px;
-    font-size: 18px;
-  }
-  
-  .curso-btn:hover {
-    background-color: #3b59d0;
-  }
-  
+    transition: background-color 0.3s ease;
+}
+
+.curso-button:hover {
+    background-color: #0056b3;
+}
+
+.curso-button:active {
+    background-color: #00408a;
+}

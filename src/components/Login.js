@@ -1,48 +1,22 @@
-// src/components/Login.js
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Login.css';
+import '../App.css';
 
-function Login() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+function Login({ setIsAuthenticated }) {
   const navigate = useNavigate();
 
   const handleLogin = () => {
-    if (username && password) {
-      navigate(`/dashboard`);
-    } else {
-      alert('Por favor, ingresa tus credenciales.');
-    }
-  };
-
-  const handleRegister = () => {
-    navigate('/register');
+    setIsAuthenticated(true);
+    navigate('/seleccionar-curso');  // Redirige después de autenticarse
   };
 
   return (
     <div className="login-container">
-      <h2>Iniciar Sesión</h2>
-      <div className="input-container">
-        <label>Usuario:</label>
-        <input 
-          type="text" 
-          placeholder="Ingresa tu usuario" 
-          value={username} 
-          onChange={(e) => setUsername(e.target.value)} 
-        />
-      </div>
-      <div className="input-container">
-        <label>Contraseña:</label>
-        <input 
-          type="password" 
-          placeholder="Ingresa tu contraseña" 
-          value={password} 
-          onChange={(e) => setPassword(e.target.value)} 
-        />
-      </div>
-      <button onClick={handleLogin} className="login-btn">Iniciar Sesión</button>
-      <button onClick={handleRegister} className="register-btn">Registrarse</button>
+      <h2>Login</h2>
+      <input type="text" placeholder="Usuario" />
+      <input type="password" placeholder="Contraseña" />
+      <button onClick={handleLogin}>Iniciar Sesión</button>
+      <button onClick={() => navigate('/register')} className="secondary-button">Registrarse</button>
     </div>
   );
 }

@@ -1,18 +1,28 @@
-// src/components/Dashboard.js
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'; // Importamos useNavigate
 
 function Dashboard() {
   const navigate = useNavigate();
 
-  const handleCursosClick = () => {
-    navigate('/cursos');
+  // Cursos disponibles
+  const cursos = ['Asir1', 'Asir2', 'Dam1', 'Dam2'];
+
+  // Función para manejar la selección de curso
+  const handleSelectCourse = (curso) => {
+    navigate(`/curso/${curso}`);  // Redirige a la página del curso seleccionado
   };
 
   return (
-    <div className="dashboard-container">
-      <h2>Bienvenido al Dashboard</h2>
-      <button onClick={handleCursosClick}>Seleccionar Curso</button>
+    <div>
+      <h1>Bienvenido al Dashboard</h1>
+      <h3>Selecciona un curso:</h3>
+      <div>
+        {cursos.map((curso) => (
+          <button key={curso} onClick={() => handleSelectCourse(curso)}>
+            {curso}
+          </button>
+        ))}
+      </div>
     </div>
   );
 }

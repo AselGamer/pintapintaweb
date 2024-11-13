@@ -1,25 +1,25 @@
-// src/components/CursoPage.js
 import React from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 function CursoPage() {
-  const { courseName } = useParams(); // Obtenemos el nombre del curso desde la URL
-  const navigate = useNavigate();
-
-  const handleFaltasClick = () => {
-    navigate('/faltas'); // Redirigir a la página de faltas
-  };
-
-  const handleEntregasClick = () => {
-    navigate('/entregas'); // Redirigir a la página de entregas
-  };
+  const { curso } = useParams();  // Obtener el nombre del curso desde la URL
 
   return (
-    <div className="curso-page-container">
-      <h2>Curso Seleccionado: {courseName}</h2>
-      <div className="course-actions">
-        <button onClick={handleFaltasClick}>Ver Faltas</button>
-        <button onClick={handleEntregasClick}>Hacer Entregas</button>
+    <div>
+      <h1>Estás en el curso: {curso}</h1>
+      <div>
+        <button>
+          <Link to={`/curso/${curso}/crear-tarea`}>Crear Tarea</Link>
+        </button>
+        <button>
+          <Link to={`/curso/${curso}/ver-entregas`}>Ver Entregas</Link>
+        </button>
+        <button>
+          <Link to={`/curso/${curso}/ver-usuarios`}>Ver Usuarios</Link>
+        </button>
+        <button>
+          <Link to={`/curso/${curso}/ver-ausencias`}>Ver Ausencias</Link>
+        </button>
       </div>
     </div>
   );

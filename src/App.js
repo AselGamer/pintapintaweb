@@ -1,31 +1,35 @@
-// src/App.js
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import './App.css'; // Estilos principales
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import './App.css';
 
 import Login from './components/Login';
 import Register from './components/Register';
-import Dashboard from './components/Dashboard';
-import Cursos from './components/Cursos';
-import ListadoFaltas from './components/ListadoFaltas'; // Página de faltas
-import Entregas from './components/Entregas'; // Página de entregas
-import CursoPage from './components/CursoPage'; // Nueva página para ver el curso
+import SeleccionarCurso from './components/SeleccionarCurso';
+import CursoPage from './components/CursoPage';
+import CrearTarea from './components/CrearTarea';
+import VerEntregas from './components/VerEntregas';
+import VerUsuarios from './components/VerUsuarios';
+import VerAusencias from './components/VerAusencias';  // Importamos la nueva página
 
 function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
   return (
     <Router>
-      <div className="App">
+      <div className="app-container">
         <Routes>
-          {/* Redirigir la ruta raíz (/) al Login */}
-          <Route path="/" element={<Navigate to="/login" />} />
-
-          <Route path="/login" element={<Login />} />
+          <Route path="/" element={<Login setIsAuthenticated={setIsAuthenticated} />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/cursos" element={<Cursos />} />
-          <Route path="/curso/:courseName" element={<CursoPage />} /> {/* Página del curso */}
-          <Route path="/faltas" element={<ListadoFaltas />} />
-          <Route path="/entregas" element={<Entregas />} />
+          {isAuthenticated && (
+            <>
+              <Route path="/seleccionar-curso" element={<SeleccionarCurso />} />
+              <Route path="/curso/:curso" element={<CursoPage />} />
+              <Route path="/curso/:curso/crear-tarea" element={<CrearTarea />} />
+              <Route path="/curso/:curso/ver-entregas" element={<VerEntregas />} />
+              <Route path="/curso/:curso/ver-usuarios" element={<VerUsuarios />} />
+              <Route path="/curso/:curso/ver-ausencias" element={<VerAusencias />} />  {/* Nueva ruta */}
+            </>
+          )}
         </Routes>
       </div>
     </Router>
